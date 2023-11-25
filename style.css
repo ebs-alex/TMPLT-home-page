@@ -5,14 +5,14 @@
 
 html {
     font-size: 16px;
-    color: bisque;
+    color: black;
     overflow: hidden;
 	height: 100%;
 }
 
 
 body {
-    background-color: black;
+    background-color: white;
     overflow: scroll;
 	height: 100%;
 
@@ -23,10 +23,6 @@ body {
     border: 1px solid red;
 }
 
-
-
-
-
 .main-container {
     display: grid;
     grid-template-columns: max(18vw, 180px) 3fr;
@@ -34,9 +30,12 @@ body {
     height: 100%;
 }
 
+
+
+
 .main-page {
     display: grid;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 180px 1fr;
 }
 
 .main-page > div {
@@ -44,12 +43,56 @@ body {
 }
 
 
+.page-header {
+    padding: 3.5vh;
+    display: grid;
+    grid-template: 1fr 1fr / 2fr 1fr;
+}
 
 
-.side-dash {
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 1vw;
+    margin-left: 1vw;
+}
 
-    /* display: grid; */
-    /* grid-template-rows: 1fr 1fr;  */
+.search-bar input {
+    width: 50%;
+}
+
+.header-notif {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.header-greeting {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    align-items: center;
+    justify-items: start;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1vw;
+}
+
+
+
+.side-dash > p {
+
+    font-size: 1.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    text-align: center;
 
 
 }
@@ -61,6 +104,38 @@ body {
     margin-top: 5vh;
     margin-bottom: 8vh;
     
+}
+
+.profile-img {
+    width: clamp(25px, 3.5vw, 45px);
+    height: auto;
+    border-radius: 30%;
+}
+
+.header-greeting .profile-img {
+    width: clamp(50px, 6.5vw, 85px);
+    height: auto;
+    border-radius: 30%;
+    justify-self: end;
+    margin: 1vw;
+}
+
+
+.icon {
+    /* filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%); */
+    width: clamp(15px, 2vw, 25px);
+    height: auto;
+}
+
+#dash-icon {
+    width: clamp(25px, 3.5vw, 45px);
+    height: auto;
+}
+
+.side-dash li {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
 }
 
 
@@ -89,11 +164,17 @@ body {
         padding: 0;
         display: flex;
         flex-wrap: wrap;
-        gap: 4vw;
+        gap: 6vw;
         margin: 1vw;
         /* margin: 5vh 2vw; */
         justify-content: center;
         
     
+    }
+
+    .side-dash li {
+        display: flex;
+        flex-direction: column-reverse;
+
     }
 }
