@@ -106,6 +106,85 @@ body {
     
 }
 
+
+.main-page-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.main-page-content > div {
+    border: 1px solid red;
+}
+
+.main-page-content ul {
+    list-style: none;
+}
+
+.card-section {
+    grid-row: 1 / -1;
+}
+
+.trending > ul {
+    /* display: flex;
+    flex-direction: column; */
+
+    display: grid;
+    gap: 2vh;
+    /* justify-items: center; */
+}
+
+.trending li {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.announcements {
+    display: flex;
+    flex-direction: column;   
+}
+
+.announcements ul {
+    display: grid;
+    gap: 1vh;
+}
+
+.announcement-name,
+.card-title {
+    font-weight: 700;
+}
+
+
+.announcement-text {
+    font-size: 0.8rem;
+}
+
+
+.card-section > ul {
+
+    padding: 2vw;
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+
+
+}
+
+
+.card-title {
+    font-size: 1.2rem;
+}
+
+
+
+.card-section > ul > li {
+    background-color: aliceblue;
+}
+
+
+
+
 .profile-img {
     width: clamp(25px, 3.5vw, 45px);
     height: auto;
