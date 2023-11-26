@@ -1,13 +1,28 @@
 :root {
-
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-size: 16px;
+    color: black;
+    --page-header-fntColor: black;
+    --side-dash-fntColor: bisque;
+    --lg-title-font-size: 1.5rem;
+    --standar-border-radius: 7px;
+    --btn-standard-fntColor: black;
+    --btn-standard-bgColor: rgb(235, 235, 235);
+    --btn-standard-radius: 20px;
+    --main-page-bgColor: rgb(235, 235, 235);;
+    --page-header-bgColor: aliceblue;
+    --side-dash-bgColor: rgb(94, 92, 92);
+    --card-bgColor: aliceblue;
 }
 
 
 html {
-    font-size: 16px;
-    color: black;
     overflow: hidden;
 	height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -15,12 +30,9 @@ body {
     background-color: white;
     overflow: scroll;
 	height: 100%;
-
-}
-
-
-.main-container > div {
-    border: 1px solid red;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .main-container {
@@ -28,6 +40,7 @@ body {
     grid-template-columns: max(18vw, 180px) 3fr;
     grid-template-rows: 1fr;
     height: 100%;
+    width: 100%;
 }
 
 
@@ -38,19 +51,19 @@ body {
     grid-template-rows: 180px 1fr;
 }
 
-.main-page > div {
-    border: 1px solid red;
-}
-
-
 .page-header {
-    padding: 3.5vh;
+    color: var(--page-header-fntColor);
+    padding: 3.5vh 4vw;
     display: grid;
-    grid-template: 1fr 1fr / 2fr 1fr;
+    grid-template: 1fr 1fr / 5fr 3fr;
+    background-color: var(--page-header-bgColor);
+    box-shadow: 0px 3px 5px black;
+    z-index: 1;
 }
 
 
 .search-bar {
+    
     display: flex;
     align-items: center;
     justify-items: center;
@@ -59,12 +72,18 @@ body {
 }
 
 .search-bar input {
-    width: 50%;
+    background-color: var(--btn-standard-bgColor);
+    border-radius: var(--btn-standard-radius);
+    border: none;
+    padding: 7px;
+    width: 65%;
 }
 
 .header-notif {
+    font-weight: 700;
     display: flex;
     align-items: center;
+    justify-content: end;
     gap: 1vw;
 }
 
@@ -73,6 +92,12 @@ body {
     grid-template-columns: 1fr 6fr;
     align-items: center;
     justify-items: start;
+    font-weight: 600;
+}
+
+.header-greeting > div > div:nth-child(2) {
+    font-size: 1.3rem;
+
 }
 
 .header-buttons {
@@ -80,6 +105,21 @@ body {
     align-items: center;
     justify-content: start;
     gap: 1vw;
+
+}
+
+.header-buttons button {
+    width: 100%;
+    padding: 7px;
+    color: var(--btn-standard-fntColor);
+    background-color: var(--btn-standard-bgColor);
+    border-radius: var(--btn-standard-radius);
+    box-shadow: -2px 2px 3px black;
+}
+
+.side-dash {
+    background-color: var(--side-dash-bgColor);
+    color: var(--side-dash-fntColor);
 }
 
 
@@ -111,11 +151,10 @@ body {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
+    padding: 3vh 3vw 0 0;
+    background-color: var(--main-page-bgColor);
 }
 
-.main-page-content > div {
-    border: 1px solid red;
-}
 
 .main-page-content ul {
     list-style: none;
@@ -125,13 +164,31 @@ body {
     grid-row: 1 / -1;
 }
 
-.trending > ul {
-    /* display: flex;
-    flex-direction: column; */
 
+.trending > p,
+.announcements > p {
+    font-size: var(--lg-title-font-size);
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    margin: 0;
+}
+
+.trending {
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+}
+
+.trending > ul,
+.announcements > ul {
+    margin: 1vh;
+    padding: 1vw;
     display: grid;
     gap: 2vh;
-    /* justify-items: center; */
+    box-shadow: 0px 2px 6px black;
+    background-color: var(--card-bgColor);
+    border-radius: var(--standar-border-radius);
+    
 }
 
 .trending li {
@@ -140,19 +197,12 @@ body {
     gap: 1vw;
 }
 
-.announcements {
-    display: flex;
-    flex-direction: column;   
-}
 
-.announcements ul {
-    display: grid;
-    gap: 1vh;
-}
 
 .announcement-name,
 .card-title {
     font-weight: 700;
+    
 }
 
 
@@ -160,26 +210,46 @@ body {
     font-size: 0.8rem;
 }
 
+.card-section > p {
+    font-size: var(--lg-title-font-size);
+    margin: 0 3vw;
+}
+
 
 .card-section > ul {
-
-    padding: 2vw;
+    padding: 0 2vw;
     display: grid;
-    gap: 1vw;
-    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    column-gap: 2vw;
+    row-gap: 4vh;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
 
-
+.card-text {
+    margin-top: 0.5vh;
+    font-size: calc(0.9rem + 0.2vw);
 }
 
 
 .card-title {
     font-size: 1.2rem;
+    text-align: center;
+    padding: 0 0.3vw;
 }
 
 
 
 .card-section > ul > li {
-    background-color: aliceblue;
+    background-color: var(--card-bgColor);
+    border-left: 5px solid var(--side-dash-bgColor);
+    border-radius: var(--standar-border-radius);
+    box-shadow: 0px 2px 6px black;
+    padding: 1vw 1vw 1vw 1vw
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
 }
 
 
@@ -201,7 +271,7 @@ body {
 
 
 .icon {
-    /* filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%); */
+    filter: var(--icon-filter-color);
     width: clamp(15px, 2vw, 25px);
     height: auto;
 }
@@ -216,6 +286,55 @@ body {
     align-items: center;
     gap: 1vw;
 }
+
+button:hover {
+    border: 3px solid grey;
+    transition: border 0.5s ease-in-out;
+}
+
+button:active {
+    box-shadow: none;
+}
+
+.search-bar input:hover {
+    border: 1px solid black;
+    transition: border 0.1s ease-in-out;
+}
+
+.card-section > ul > li:hover {
+    box-shadow: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card-section > ul > li:hover .card-title {
+    border-bottom: 2px solid black;
+    transition: border-bottom 0.3s ease-in-out;
+}
+
+.card-section li img:hover {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.side-dash > ul > li:hover {
+    color: #f0f8ff;
+    transition: color 0.5s ease-out;
+    filter: invert(97%) sepia(96%) saturate(1503%) hue-rotate(178deg) brightness(107%) contrast(110%);
+}
+
+.trending > ul > li:hover img {
+
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.announcements > ul > li:hover .announcement-name {
+    font-size: 1.02rem;
+    transition: font-size 0.3s ease-in-out;
+}
+
+
+
 
 
 @media (max-width: 760px) {
