@@ -344,8 +344,6 @@ button:active {
     }
 
     .side-dash {
-        
-        
         display: flex;
         flex-wrap: wrap;
         font-size: 0.8rem;
@@ -355,24 +353,43 @@ button:active {
     }
     
     .side-dash ul { 
-/* 
-        display: grid;
-        grid-template-columns: repeat(6, 1fr); */
-
         padding: 0;
         display: flex;
         flex-wrap: wrap;
         gap: 6vw;
         margin: 1vw;
-        /* margin: 5vh 2vw; */
         justify-content: center;
-        
-    
     }
 
     .side-dash li {
         display: flex;
         flex-direction: column-reverse;
 
+    }
+
+    
+    .main-page-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* grid-template-rows: 1fr 1fr; */
+    }
+
+    .page-header {
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+    }
+
+    .header-notif {
+        align-self: flex-start;
+        margin-left: 2vw;
+    }
+    .header-notif > img[class="profile-img"] {
+        display: none;
+    }
+
+    .main-page {
+        display: flex;
+        flex-direction: column;
     }
 }
